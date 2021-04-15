@@ -1,0 +1,36 @@
+<div class="users">
+  <div class="control-panel">
+    <form>
+      <label class="select">Select column to filter:
+        <select [(ngModel)]="searchValue" [ngModelOptions]="{standalone: true}">
+          <option *ngFor="let opt of options" [value]="opt.value">{{ opt.text }}</option>
+        </select>
+      </label>
+      <label class="input">Enter filter keywords:
+        <input type="text" placeholder="filter keywords go here..." (keyup)="filter($event)" />
+      </label>
+    </form>
+  </div>
+  <div class="users-list-wrapper">
+    <table class="users-list">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>User Name</th>
+          <th>E-mail</th>
+          <th>Phone</th>
+          <th>Website</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let usr of userDetail">
+          <td>{{usr.name}}</td>
+          <td>{{usr.username}}</td>
+          <td>{{usr.email}}</td>
+          <td>{{usr.phone}}</td>
+          <td>{{usr.website}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
