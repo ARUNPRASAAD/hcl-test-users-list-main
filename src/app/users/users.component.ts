@@ -59,7 +59,6 @@ export class UsersComponent implements OnInit {
       this.userDetail = this.duplicateUserData.filter(
         (usr) => {
           if ((usr[`${criteria}`].toLowerCase().indexOf(searchedValue.toLowerCase())) > -1) {
-            console.log(usr, 'got it');
             return usr;
           }
         }
